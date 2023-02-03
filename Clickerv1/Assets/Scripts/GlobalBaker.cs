@@ -21,9 +21,9 @@ public class GlobalBaker : MonoBehaviour
     void Update()
     {
         currentCash = GlobalCash.CashCount;
-        bakerStats.GetComponent<Text>().text = "Bakers: " + numberofBakers;
-        fakeText.GetComponent<Text>().text = "Buy Baker " + bakervalue;
-        realText.GetComponent<Text>().text = "Buy Baker " + bakervalue;
+        bakerStats.GetComponent<Text>().text = "Músics: " + numberofBakers;
+        fakeText.GetComponent<Text>().text = "Músic " + bakervalue + " Ors";
+        realText.GetComponent<Text>().text = "Músic " + bakervalue + " Ors";
         if (currentCash >= bakervalue) {
             fakeButton.SetActive(false);
             realButton.SetActive(true);

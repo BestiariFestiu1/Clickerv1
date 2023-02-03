@@ -13,7 +13,7 @@ public class GlobalCash : MonoBehaviour
 
     void Update (){
         InternalCash = CashCount;
-        CashDisplay.GetComponent<Text>().text = "Cash: " + InternalCash;
+        CashDisplay.GetComponent<Text>().text = "Ors Acomulats: " + InternalCash;
 
     }
 }

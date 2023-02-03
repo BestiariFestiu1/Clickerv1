@@ -12,7 +12,7 @@ public class GlobalCookies : MonoBehaviour
 
     void Update (){
         InternalCookie = CookieCount;
-        CookieDisplay.GetComponent<Text>().text = "Cookie: " + InternalCookie;
+        CookieDisplay.GetComponent<Text>().text = "Focs Acomulats: " + InternalCookie;
 
     }
 }
