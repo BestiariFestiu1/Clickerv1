@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AutoSell : MonoBehaviour
+public class AutoMercader : MonoBehaviour
 {
 
     public bool SellingCookie = false;
     public static int CashIncrease = 1;
-    public int InternalIncrease;
+    public int MercalicalIncrease;
 
     //Observar el valor de creacio de cookies, conecta amb "purchase Log"
     void Update ()
     {
-       CashIncrease = GlobalShop.ShopPerSec; //Afegit, fa que els bakers augmentin el treball.
-        InternalIncrease = CashIncrease;
+       CashIncrease = GlobalMercader.MercPerSec; //Afegit, fa que els bakers augmentin el treball.
+        MercalicalIncrease = CashIncrease;
         if (SellingCookie == false) 
         {
             SellingCookie = true;
             StartCoroutine(SellTheCookie());
         }
-
     }
 
     // Cuan activar generar 1 cookie per segon
@@ -34,8 +33,9 @@ public class AutoSell : MonoBehaviour
         }
         else
         {
-            GlobalCash.CashCount += InternalIncrease;
-            GlobalCookies.CookieCount -= InternalIncrease;
+            GlobalCash.CashCount += MercalicalIncrease;
+
+            GlobalCookies.CookieCount -= MercalicalIncrease;
             yield return new WaitForSeconds(1);
             SellingCookie = false;
         }

@@ -10,7 +10,7 @@ public class GlobalDiables : MonoBehaviour
     public GameObject realButton;
     public GameObject realText;
     public int currentDiable;
-    public static int Diablevalue = 5;
+    public static int Diablevalue = 50;
     public static bool TurnOffButton = false;
     public GameObject DiableStats;
     public static int numberofDiables;
@@ -32,6 +32,11 @@ public class GlobalDiables : MonoBehaviour
             realButton.SetActive(false);
             fakeButton.SetActive(true);
             TurnOffButton = false;
+        }
+        if (Diablevalue > GlobalCash.CashCount)
+        {
+            fakeButton.SetActive(true);
+            realButton.SetActive(false);
         }
     }
 }

@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GlobalShop : MonoBehaviour
+public class GlobalMercader : MonoBehaviour
 {
     public GameObject fakeButton;
     public GameObject fakeText;
     public GameObject realButton;
     public GameObject realText;
-    public int currentCash;
-    public static int shopvalue = 10;
+    public int currentMerc;
+    public static int mercvalue = 50;
     public static bool TurnOffButton = false;
-    public GameObject shopStats;
-    public static int numberofShops;
-    public static int ShopPerSec;
+    public GameObject mercStats;
+    public static int numberofMercs;
+    public static int MercPerSec;
 
 
   // No es pot clicar comprar cuiner si no hi han 50 monedes.
     void Update()
     {
-        currentCash = GlobalCash.CashCount;
-        shopStats.GetComponent<Text>().text = "Venedors: " + numberofShops;
-        fakeText.GetComponent<Text>().text = "Venedor " + shopvalue + " Ors";
-        realText.GetComponent<Text>().text = "Venedor " + shopvalue + " Ors";
-        if (currentCash >= shopvalue) {
+        currentMerc = GlobalCash.CashCount;
+        mercStats.GetComponent<Text>().text = "Mercaders: " + numberofMercs;
+        fakeText.GetComponent<Text>().text = "Mercader " + mercvalue + " Ors";
+        realText.GetComponent<Text>().text = "Mercader " + mercvalue + " Ors";
+        if (currentMerc >= mercvalue) {
             fakeButton.SetActive(false);
             realButton.SetActive(true);
         }
@@ -33,7 +33,7 @@ public class GlobalShop : MonoBehaviour
             fakeButton.SetActive(true);
             TurnOffButton = false;
         }
-        if (shopvalue > GlobalCash.CashCount)
+        if (mercvalue > GlobalCash.CashCount)
         {
             fakeButton.SetActive(true);
             realButton.SetActive(false);

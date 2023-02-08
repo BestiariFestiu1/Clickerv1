@@ -8,6 +8,9 @@ public class PurchaseLog : MonoBehaviour
     public GameObject AutoCookie;
     public GameObject AutoSell;
     public GameObject AutoDiable;
+    public GameObject AutoGegant;
+    public GameObject AutoMercader;
+    public GameObject AutoOrfebre;
 
     public void StartAutoCookie()
     {
@@ -43,5 +46,41 @@ public class PurchaseLog : MonoBehaviour
         //Millora els sellers
         GlobalDiables.DiablesPerSec += 5;
         GlobalDiables.numberofDiables += 1;
+    }
+
+    public void StartAutoGegant()
+    {
+        AutoGegant.SetActive(true);
+        // cuan es fa servir el global sell, augmenta el valor per 2
+        GlobalCash.CashCount -= GlobalGegants.Gegantvalue;
+        GlobalGegants.Gegantvalue *= 2;
+        GlobalGegants.TurnOffButton = true;
+        //Millora els sellers
+        GlobalGegants.GegantsPerSec += 10;
+        GlobalGegants.numberofGegants += 1;
+    }
+
+    public void StartAutoMercader()
+    {
+        AutoMercader.SetActive(true);
+        // cuan es fa servir el global sell, augmenta el valor per 2
+        GlobalCash.CashCount -= GlobalShop.shopvalue;
+        GlobalMercader.mercvalue *= 2;
+        GlobalMercader.TurnOffButton = true;
+        //Millora els sellers
+        GlobalMercader.MercPerSec += 5;
+        GlobalMercader.numberofMercs += 1;
+    }
+
+    public void StartAutoOrfebre()
+    {
+        AutoOrfebre.SetActive(true);
+        // cuan es fa servir el global sell, augmenta el valor per 2
+        GlobalCash.CashCount -= GlobalShop.shopvalue;
+        GlobalOrfebre.orfebrervalue *= 2;
+        GlobalOrfebre.TurnOffButton = true;
+        //Millora els sellers
+        GlobalOrfebre.OrfebrePerSec += 10;
+        GlobalOrfebre.numberofOrfebres += 1;
     }
 }

@@ -33,5 +33,10 @@ public class GlobalBaker : MonoBehaviour
             fakeButton.SetActive(true);
             TurnOffButton = false;
         }
+        if (bakervalue > GlobalCash.CashCount)
+        {
+            fakeButton.SetActive(true);
+            realButton.SetActive(false);
+        }
     }
 }
