@@ -83,4 +83,41 @@ public class PurchaseLog : MonoBehaviour
         GlobalOrfebre.OrfebrePerSec += 10;
         GlobalOrfebre.numberofOrfebres += 1;
     }
+
+    public void StartAutoFuet()
+    {
+        // cuan es fa servir el global sell, augmenta el valor per 2
+        ChargeBeast.waterCount -= Fuets.Fuetvalue;
+        Fuets.Fuetvalue *= 2;
+        Fuets.TurnOffButton = true;
+        MainButtonClick.ClicBake += 1;
+        Fuets.numberofFuets += 1;
+    }
+    public void StartAutoBanya()
+    {
+        // cuan es fa servir el global sell, augmenta el valor per 2
+        ChargeBeast.waterCount -= BanyaVerda.Fuetvalue;
+        BanyaVerda.Fuetvalue *= 2;
+
+        GlobalBaker.bakePerSec *= 2;
+        GlobalDiables.DiablesPerSec *= 2;
+        GlobalGegants.GegantsPerSec *= 2;
+
+        BanyaVerda.TurnOffButton = true;
+        BanyaVerda.numberofFuets += 1;
+    }
+
+    public void StartAutoLlum()
+    {
+        // cuan es fa servir el global sell, augmenta el valor per 2
+        ChargeBeast.waterCount -= Llucifer.Fuetvalue;
+        Llucifer.Fuetvalue *= 2;
+
+        GlobalShop.ShopPerSec *= 2;
+        GlobalMercader.MercPerSec *= 2;
+        GlobalGegants.GegantsPerSec *= 2;
+
+        Llucifer.TurnOffButton = true;
+        Llucifer.numberofFuets += 1;
+    }
 }

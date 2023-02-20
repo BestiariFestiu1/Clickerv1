@@ -7,9 +7,13 @@ public class MainButtonClick : MonoBehaviour
 {
 
     public GameObject textbox;
+    public static int ClicBake = 1;
 
     public void ClickTheButtonBake() {
-        GlobalCookies.CookieCount += 1;
+
+        
+        GlobalCookies.CookieCount += ClicBake;
+        GlobalCookies.InfiniteCookie += 1;
     }
     public void ClickTheButtonSell() {
         if (GlobalCookies.CookieCount == 0)

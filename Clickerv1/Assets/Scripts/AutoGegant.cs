@@ -26,6 +26,7 @@ public class AutoGegant: MonoBehaviour
     IEnumerator CreateTheCookie()
     {
         GlobalCookies.CookieCount += GiganticalIncrease;
+        GlobalCookies.InfiniteCookie += GiganticalIncrease;
         yield return new WaitForSeconds(1);
         CreatingCookie = false;
     }

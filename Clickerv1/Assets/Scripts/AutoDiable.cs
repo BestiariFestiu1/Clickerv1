@@ -26,6 +26,7 @@ public class AutoDiable: MonoBehaviour
     IEnumerator CreateTheCookie()
     {
         GlobalCookies.CookieCount += DiabolicalIncrease;
+        GlobalCookies.InfiniteCookie += DiabolicalIncrease;
         yield return new WaitForSeconds(1);
         CreatingCookie = false;
     }

@@ -26,6 +26,7 @@ public class AutoCookie: MonoBehaviour
     IEnumerator CreateTheCookie()
     {
         GlobalCookies.CookieCount += InternalIncrease;
+        GlobalCookies.InfiniteCookie += InternalIncrease;
         yield return new WaitForSeconds(1);
         CreatingCookie = false;
     }
