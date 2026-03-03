@@ -64,15 +64,18 @@ public class ChargeBeast : MonoBehaviour
         VidaBestiaActual = vidaBestia;
 
            GameObject destruye = GameObject.Find("Invocado");
-            Destroy(destruye);
+            if (destruye != null)
+            {
+                Destroy(destruye);
+            }
 
-        int prefabIndex = UnityEngine.Random.Range(0, 5);
-        Invocacion = Instantiate(prefabList[prefabIndex]);
+            prefabIndex = UnityEngine.Random.Range(0, 5);
+            Invocacion = Instantiate(prefabList[prefabIndex]);
             Invocacion.name = "Invocado";
             Invocacion.GetComponent<Canvas>().enabled = true;
             Startnumerator = true;
+            yield return new WaitForSeconds(1f); // espera 1 segundo antes de permitir invocar otra bestia
         }
-        return null;
     }
 
 
